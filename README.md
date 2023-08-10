@@ -25,3 +25,6 @@ This guide will walk you through the steps to set up and run the Animal Survey A
 
 3. Start the APP on Android by running:
    `yarn android`
+
+   <img width="452" alt="Screenshot 2023-08-10 at 12 20 14" src="https://github.com/yahyamokaied/animal-survey/assets/50097658/bcdd0129-a28c-494f-838d-0c981fa66caa">
+
