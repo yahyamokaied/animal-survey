@@ -1,17 +1,17 @@
 import React, {useCallback} from 'react';
 import {ActivityIndicator, Text, View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import AppButton from '../components/AppButton';
+import ConfirmationComponent from '../components/ConfirmationComponent';
+import {getErrorMessage} from '../components/getErrorMessage';
+import {renderQuestion} from '../components/renderQuestion';
 import useSurveys from '../hooks/useSurveys';
 import {Question} from '../store/types';
 import colors from '../theme/colors';
 import commonStyles from '../theme/commonStyles';
 import {mapAnswersById} from '../utils/helper';
-import AppButton from './AppButton';
-import ConfirmationComponent from './ConfirmationComponent';
-import {getErrorMessage} from './getErrorMessage';
-import {renderQuestion} from './renderQuestion';
 
-const SurveysComponent: React.FC = () => {
+const SurveyScreen: React.FC = () => {
   const {
     surveys,
     answers,
@@ -47,11 +47,19 @@ const SurveysComponent: React.FC = () => {
   }
 
   if (loading) {
-    return <ActivityIndicator size="large" color={colors.secondary} />;
+    return (
+      <View style={commonStyles.emtpyScreen}>
+        <ActivityIndicator size="large" color={colors.secondary} />
+      </View>
+    );
   }
 
   if (error) {
-    return <Text style={commonStyles.errorText}>{getErrorMessage(error)}</Text>;
+    return (
+      <View style={commonStyles.emtpyScreen}>
+        <Text style={commonStyles.errorText}>{getErrorMessage(error)}</Text>
+      </View>
+    );
   }
 
   return (
@@ -75,4 +83,4 @@ const SurveysComponent: React.FC = () => {
   );
 };
 
-export default SurveysComponent;
+export default SurveyScreen;

@@ -17,6 +17,13 @@ export const commonStyles = StyleSheet.create({
     borderColor: colors.lightGrey,
     borderWidth: 1,
   },
+  emtpyScreen: {
+    margin: 10,
+    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: colors.primary,
+  },
   formStyle: {
     flex: 1,
   },
@@ -48,7 +55,7 @@ export const commonStyles = StyleSheet.create({
     height: '5%',
   },
   textTitle: {
-    color: colors.error,
+    color: colors.primary,
     fontSize: 20,
     fontWeight: 'bold',
   },
