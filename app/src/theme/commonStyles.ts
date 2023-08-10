@@ -22,6 +22,7 @@ export const commonStyles = StyleSheet.create({
     padding: 10,
     justifyContent: 'center',
     alignItems: 'center',
+    flex: 1,
     color: colors.primary,
   },
   formStyle: {

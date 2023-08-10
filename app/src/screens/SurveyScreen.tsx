@@ -10,6 +10,9 @@ import {Question} from '../store/types';
 import colors from '../theme/colors';
 import commonStyles from '../theme/commonStyles';
 import {mapAnswersById} from '../utils/helper';
+import {AppDispatch} from '../store/store';
+import {useDispatch} from 'react-redux';
+import {getSurveys} from '../store/api/apiSlice';
 
 const SurveyScreen: React.FC = () => {
   const {
@@ -23,6 +26,8 @@ const SurveyScreen: React.FC = () => {
     showSummary,
     resetSurvey,
   } = useSurveys();
+
+  const dispatch: AppDispatch = useDispatch();
 
   const answersById = mapAnswersById(answers);
 
@@ -58,6 +63,11 @@ const SurveyScreen: React.FC = () => {
     return (
       <View style={commonStyles.emtpyScreen}>
         <Text style={commonStyles.errorText}>{getErrorMessage(error)}</Text>
+        <AppButton
+          title="Reload"
+          onPress={() => dispatch(getSurveys())}
+          color={colors.error}
+        />
       </View>
     );
   }

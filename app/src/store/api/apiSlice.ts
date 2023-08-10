@@ -16,7 +16,8 @@ const basePath =
 
 export const getSurveys = createAsyncThunk('getSurveys', async () => {
   const response = await fetch(`${basePath}/get-surveys`);
-  return response.json();
+  const data = await response.json();
+  return data;
 });
 
 export const saveAnswersToServer = createAsyncThunk(
@@ -51,6 +52,7 @@ export const apiSlice = createSlice({
     builder.addCase(getSurveys.fulfilled, (state, {payload}) => {
       state.loading = false;
       state.surveys = payload.surveys;
+      state.error = null;
     });
     builder.addCase(getSurveys.pending, state => {
       state.loading = true;

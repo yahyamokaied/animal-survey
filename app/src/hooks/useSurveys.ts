@@ -31,10 +31,6 @@ const useSurveys = () => {
     ? surveys.every(question => answersById[question.questionId] !== undefined)
     : false;
 
-  const fetchSurveys = () => {
-    dispatch(getSurveys());
-  };
-
   const saveAllAnswers = () => {
     dispatch(saveAnswersToServer(answers));
   };
@@ -57,8 +53,8 @@ const useSurveys = () => {
   };
 
   useEffect(() => {
-    fetchSurveys();
-  }, []);
+    dispatch(getSurveys());
+  }, [dispatch]);
 
   return {
     surveys,
