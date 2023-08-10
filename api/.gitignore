@@ -1,0 +1,21 @@
+# Dependency directory
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# IDE / editor files
+.idea
+*.swp
+*.swo
+*.swn
+*.swx
+*.orig
+.DS_Store
+
+# OS generated files
+.DS_Store
+Thumbs.db

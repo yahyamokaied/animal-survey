@@ -1,0 +1,28 @@
+{
+  "surveys": [
+    {
+      "questionId": "q1",
+      "questionType": "freeText",
+      "questionText": "Please describe your pet's personality."
+    },
+    {
+      "questionId": "q2",
+      "questionType": "multipleChoice",
+      "questionText": "What is your pet's favorite food?",
+      "answerOptions": ["Chicken", "Fish", "Vegetables"]
+    },
+    {
+      "questionId": "q3",
+      "questionType": "scaled",
+      "questionText": "On a scale from 1 to 5, how active is your pet?",
+      "scaleMinValue": 1,
+      "scaleMaxValue": 5
+    },
+    {
+      "questionId": "q4",
+      "questionType": "checkbox",
+      "questionText": "Which of the following do you provide for your pet?",
+      "answerOptions": ["Toys", "Grooming", "Regular Check-ups"]
+    }
+  ]
+}
